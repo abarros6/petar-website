@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { images } from "@/lib/images";
 
 export default function About() {
   return (
@@ -7,10 +8,10 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Text */}
           <div>
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#c8932a] mb-4">
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#b39f79] mb-4">
               About Us
             </p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#111111] leading-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#153243] leading-tight mb-6">
               A few words <br />about Pavcon
             </h2>
             <p className="text-[#4b5563] leading-relaxed mb-5">
@@ -33,7 +34,7 @@ export default function About() {
                 { value: "100%", label: "Satisfaction" },
               ].map((stat) => (
                 <div key={stat.label}>
-                  <p className="text-2xl sm:text-3xl font-bold text-[#111111]">{stat.value}</p>
+                  <p className="text-2xl sm:text-3xl font-bold text-[#153243]">{stat.value}</p>
                   <p className="text-xs sm:text-sm text-[#6b7280] mt-1">{stat.label}</p>
                 </div>
               ))}
@@ -44,7 +45,7 @@ export default function About() {
           <div className="relative mt-4 lg:mt-0">
             <div className="aspect-[4/3] sm:aspect-[4/5] relative overflow-hidden">
               <Image
-                src="https://pavcon.ca/wp-content/uploads/2020/02/home-remodeling-sofa.jpg"
+                src={images.about}
                 alt="Pavcon renovation project"
                 fill
                 className="object-cover"
@@ -52,7 +53,7 @@ export default function About() {
               />
             </div>
             {/* Accent block — hidden on mobile to avoid overflow */}
-            <div className="hidden sm:block absolute -bottom-6 -left-6 w-28 h-28 lg:w-32 lg:h-32 bg-[#c8932a] -z-10" />
+            <div className="hidden sm:block absolute -bottom-6 -left-6 w-28 h-28 lg:w-32 lg:h-32 bg-[#b39f79] -z-10" />
           </div>
         </div>
       </div>

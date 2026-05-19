@@ -2,10 +2,10 @@
 
 @theme inline {
   --color-background: #ffffff;
-  --color-foreground: #111827;
-  --color-accent: #c8932a;
-  --color-dark: #111111;
-  --color-dark-2: #1c1c1c;
+  --color-foreground: #153243;
+  --color-accent: #b39f79;
+  --color-dark: #153243;
+  --color-dark-2: #1d3a4d;
   --color-muted: #6b7280;
   --font-sans: var(--font-inter);
 }

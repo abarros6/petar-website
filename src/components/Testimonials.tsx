@@ -27,7 +27,7 @@ const testimonials = [
 
 function StarIcon() {
   return (
-    <svg className="w-4 h-4 fill-[#c8932a]" viewBox="0 0 20 20" aria-hidden="true">
+    <svg className="w-4 h-4 fill-[#b39f79]" viewBox="0 0 20 20" aria-hidden="true">
       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
     </svg>
   );
@@ -35,11 +35,11 @@ function StarIcon() {
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-16 lg:py-28 bg-[#111111]">
+    <section id="testimonials" className="py-16 lg:py-28 bg-[#153243]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-10 lg:mb-16">
-          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#c8932a] mb-3">
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#b39f79] mb-3">
             What Clients Say
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
@@ -52,7 +52,7 @@ export default function Testimonials() {
           {testimonials.map((t) => (
             <div
               key={t.name}
-              className="bg-[#1c1c1c] border border-white/5 p-6 lg:p-8 flex flex-col"
+              className="bg-[#1d3a4d] border border-white/5 p-6 lg:p-8 flex flex-col"
             >
               <div className="flex gap-1 mb-5">
                 {Array.from({ length: 5 }).map((_, i) => (
@@ -64,7 +64,7 @@ export default function Testimonials() {
               </p>
               <div className="border-t border-white/10 pt-5">
                 <p className="font-semibold text-white text-sm">{t.name}</p>
-                <p className="text-[#c8932a] text-xs mt-1">{t.role}</p>
+                <p className="text-[#b39f79] text-xs mt-1">{t.role}</p>
               </div>
             </div>
           ))}

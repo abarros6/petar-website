@@ -5,11 +5,11 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "pavcon.ca",
-        pathname: "/wp-content/uploads/**",
+        hostname: "res.cloudinary.com",
+        pathname: "/dxx7wooza/**",
       },
       {
-        protocol: "http",
+        protocol: "https",
         hostname: "pavcon.ca",
         pathname: "/wp-content/uploads/**",
       },

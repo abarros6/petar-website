@@ -5,14 +5,14 @@ const navLinks = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#services", label: "Services" },
-  { href: "#projects", label: "Projects" },
+  { href: "#gallery", label: "Gallery" },
   { href: "#testimonials", label: "Testimonials" },
   { href: "#contact", label: "Contact" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a0a0a] text-white/60">
+    <footer className="bg-[#0f1f2b] text-white/60">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Brand */}
@@ -40,7 +40,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm hover:text-[#c8932a] transition-colors"
+                    className="text-sm hover:text-[#b39f79] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -56,7 +56,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3 text-sm">
               <li>
-                <a href="tel:4163883989" className="hover:text-[#c8932a] transition-colors">
+                <a href="tel:4163883989" className="hover:text-[#b39f79] transition-colors">
                   416 388 3989
                 </a>
               </li>
