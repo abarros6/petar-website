@@ -21,6 +21,12 @@ body {
   font-family: var(--font-sans), Arial, sans-serif;
 }
 
+@media (min-width: 640px) {
+  .hero-bg {
+    background-attachment: fixed;
+  }
+}
+
 ::selection {
   background: var(--color-accent);
   color: #fff;

@@ -5,12 +5,11 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen"
+      className="relative min-h-screen hero-bg"
       style={{
         backgroundImage: `url('${images.hero}')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundAttachment: "fixed",
       }}
     >
       <div className="absolute inset-0 bg-black/55" />
