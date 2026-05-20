@@ -1,17 +1,48 @@
+'use client';
+
+import { useState } from 'react';
+import SectionHeader from "@/components/ui/SectionHeader";
+import FormField from "@/components/ui/FormField";
+
+const emptyForm = { firstName: '', lastName: '', email: '', phone: '', message: '' };
+
 export default function ContactCTA() {
+  const [form, setForm] = useState(emptyForm);
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
+    setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  }
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setStatus('loading');
+
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(form),
+    });
+
+    if (res.ok) {
+      setStatus('success');
+      setForm(emptyForm);
+    } else {
+      setStatus('error');
+    }
+  }
+
   return (
     <section id="contact" className="py-16 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           {/* Left: CTA text */}
           <div>
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#b39f79] mb-4">
-              Get In Touch
-            </p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#153243] leading-tight mb-5">
-              Contact us /<br />
-              reimagine your home
-            </h2>
+            <SectionHeader
+              label="Get In Touch"
+              heading={<>Contact us /<br />reimagine your home</>}
+              headingClassName="mb-5"
+            />
             <p className="text-[#6b7280] mb-8 leading-relaxed text-sm lg:text-base">
               Ready to start your renovation journey? Reach out today for a
               free consultation and quote. Our team is here to help bring your
@@ -32,66 +63,34 @@ export default function ContactCTA() {
 
           {/* Right: Form */}
           <div className="bg-[#153243] p-6 sm:p-8 lg:p-10">
-            <form className="space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-semibold tracking-widest uppercase text-white/50 mb-2">
-                    First Name
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="John"
-                    className="w-full bg-white/5 border border-white/10 text-white placeholder:text-white/20 px-4 py-3 text-sm focus:outline-none focus:border-[#b39f79] transition-colors"
-                  />
+            {status === 'success' ? (
+              <div className="text-white text-center py-12">
+                <p className="text-lg font-semibold mb-2">Message sent!</p>
+                <p className="text-white/60 text-sm">We'll be in touch shortly.</p>
+              </div>
+            ) : (
+              <form className="space-y-4" onSubmit={handleSubmit}>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <FormField label="First Name" name="firstName" placeholder="John" value={form.firstName} onChange={handleChange} required />
+                  <FormField label="Last Name" name="lastName" placeholder="Doe" value={form.lastName} onChange={handleChange} required />
                 </div>
-                <div>
-                  <label className="block text-xs font-semibold tracking-widest uppercase text-white/50 mb-2">
-                    Last Name
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Doe"
-                    className="w-full bg-white/5 border border-white/10 text-white placeholder:text-white/20 px-4 py-3 text-sm focus:outline-none focus:border-[#b39f79] transition-colors"
-                  />
-                </div>
-              </div>
-              <div>
-                <label className="block text-xs font-semibold tracking-widest uppercase text-white/50 mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  placeholder="john@example.com"
-                  className="w-full bg-white/5 border border-white/10 text-white placeholder:text-white/20 px-4 py-3 text-sm focus:outline-none focus:border-[#b39f79] transition-colors"
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-semibold tracking-widest uppercase text-white/50 mb-2">
-                  Phone
-                </label>
-                <input
-                  type="tel"
-                  placeholder="(416) 000-0000"
-                  className="w-full bg-white/5 border border-white/10 text-white placeholder:text-white/20 px-4 py-3 text-sm focus:outline-none focus:border-[#b39f79] transition-colors"
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-semibold tracking-widest uppercase text-white/50 mb-2">
-                  Message
-                </label>
-                <textarea
-                  rows={4}
-                  placeholder="Tell us about your project..."
-                  className="w-full bg-white/5 border border-white/10 text-white placeholder:text-white/20 px-4 py-3 text-sm focus:outline-none focus:border-[#b39f79] transition-colors resize-none"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-[#b39f79] hover:bg-[#1a6c7a] text-white font-semibold py-3.5 text-sm tracking-wider uppercase transition-all duration-300"
-              >
-                Get a Free Quote
-              </button>
-            </form>
+                <FormField label="Email" name="email" type="email" placeholder="john@example.com" value={form.email} onChange={handleChange} required />
+                <FormField label="Phone" name="phone" type="tel" placeholder="(416) 000-0000" value={form.phone} onChange={handleChange} />
+                <FormField label="Message" name="message" placeholder="Tell us about your project..." rows={4} value={form.message} onChange={handleChange} required />
+
+                {status === 'error' && (
+                  <p className="text-red-400 text-xs">Something went wrong. Please try again.</p>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={status === 'loading'}
+                  className="w-full bg-[#b39f79] hover:bg-[#1a6c7a] text-white font-semibold py-3.5 text-sm tracking-wider uppercase transition-all duration-300 disabled:opacity-60"
+                >
+                  {status === 'loading' ? 'Sending...' : 'Get a Free Quote'}
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </div>

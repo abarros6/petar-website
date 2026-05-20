@@ -1,3 +1,5 @@
+import SectionHeader from "@/components/ui/SectionHeader";
+
 const testimonials = [
   {
     name: "Edward Jacobs",
@@ -38,13 +40,8 @@ export default function Testimonials() {
     <section id="testimonials" className="py-16 lg:py-28 bg-[#153243]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-10 lg:mb-16">
-          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#b39f79] mb-3">
-            What Clients Say
-          </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Testimonials
-          </h2>
+        <div className="mb-10 lg:mb-16">
+          <SectionHeader label="What Clients Say" heading="Testimonials" center light />
         </div>
 
         {/* Cards */}

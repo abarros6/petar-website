@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { images } from "@/lib/images";
+import SectionHeader from "@/components/ui/SectionHeader";
 
 export default function About() {
   return (
@@ -8,12 +9,11 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Text */}
           <div>
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#b39f79] mb-4">
-              About Us
-            </p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#153243] leading-tight mb-6">
-              A few words <br />about Pavcon
-            </h2>
+            <SectionHeader
+              label="About Us"
+              heading={<>A few words <br />about Pavcon</>}
+              headingClassName="mb-6"
+            />
             <p className="text-[#4b5563] leading-relaxed mb-5">
               Pavcon is a Toronto-based construction and custom home builder
               dedicated to delivering high-quality residential projects. We
