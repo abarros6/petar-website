@@ -8,41 +8,54 @@ export default function Hero() {
   const bgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (!bgRef.current) return;
-      bgRef.current.style.transform = `translateY(${window.scrollY * 0.4}px)`;
+    let ticking = false;
+    let scrollY = 0;
+
+    const onScroll = () => {
+      scrollY = window.scrollY;
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          if (bgRef.current) {
+            bgRef.current.style.transform = `translate3d(0, ${scrollY * 0.35}px, 0)`;
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <section id="home" className="relative min-h-screen overflow-hidden">
       <div
         ref={bgRef}
-        className="absolute inset-x-0 -top-[20%] bottom-0 bg-cover bg-center will-change-transform"
+        className="absolute inset-x-0 top-[-30%] bottom-0 bg-cover bg-center will-change-transform"
         style={{ backgroundImage: `url('${images.hero}')` }}
       />
-      <div className="absolute inset-0 bg-black/55" />
+      <div className="absolute inset-0 bg-black/62" />
 
       <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-6 sm:px-8 text-center text-white">
-        <p className="w-full text-[10px] sm:text-xs font-semibold tracking-[0.08em] sm:tracking-[0.2em] uppercase text-[#b39f79] mb-5">
-          Serving Southern Ontario for over 20 Years
+        <p className="text-xs font-semibold tracking-[0.2em] uppercase text-accent mb-5">
+          Serving Southern Ontario for 10+ Years
         </p>
 
-        <h1 className="w-full text-3xl sm:text-5xl lg:text-7xl font-bold leading-tight mb-6 break-words">
-          We are remodeling{" "}
-          <span className="text-[#b39f79]">experts</span>
+        <h1 className="max-w-3xl text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight mb-6">
+          Renovation{" "}
+          <span className="text-accent">experts</span>
+          <br />you can trust
         </h1>
 
-        <p className="w-full sm:max-w-md text-sm sm:text-base lg:text-lg text-white/70 mb-10">
-          Toronto-based construction and custom home builder dedicated to
-          delivering high-quality residential projects.
+        <p className="max-w-md text-sm sm:text-base lg:text-lg text-white/80 mb-10 leading-relaxed">
+          Custom home builds and full renovations across the Greater Toronto Area.
+          Quality craftsmanship, on time and on budget.
         </p>
 
         <Link
           href="#contact"
-          className="bg-[#b39f79] hover:bg-[#1a6c7a] text-white font-semibold px-10 py-4 text-sm tracking-wider uppercase transition-all duration-300 hover:scale-105 text-center"
+          className="bg-accent hover:bg-[#1a6c7a] text-white font-semibold px-10 py-4 text-sm tracking-wider uppercase transition-all duration-300 hover:scale-105 text-center"
         >
           Get a Free Quote
         </Link>

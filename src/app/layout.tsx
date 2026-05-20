@@ -10,7 +10,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Pavcon | Toronto Construction & Custom Home Builder",
   description:
-    "Toronto-based construction and custom home builder. Serving Southern Ontario for over 20 years with renovations, additions, custom builds, and multi-unit conversions.",
+    "Toronto-based construction and custom home builder. Serving Southern Ontario for over 10 years with renovations, additions, custom builds, and multi-unit conversions.",
 };
 
 export default function RootLayout({

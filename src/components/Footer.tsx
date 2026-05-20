@@ -18,7 +18,7 @@ export default function Footer() {
             />
             <p className="text-sm leading-relaxed mt-4 max-w-xs">
               Toronto-based construction and custom home builder. Serving
-              Southern Ontario for over 20 years.
+              Southern Ontario for over 10 years.
             </p>
           </div>
 

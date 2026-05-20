@@ -23,15 +23,15 @@ export default function About() {
             <p className="text-[#4b5563] leading-relaxed mb-8">
               Our team brings transparent communication, practical design
               solutions, and an unwavering commitment to quality to every
-              project. With over 20 years of experience serving Southern
+              project. With over 10 years of experience serving Southern
               Ontario, we understand what it takes to bring your vision to
               life.
             </p>
             <div className="grid grid-cols-3 gap-2 sm:gap-4 border-t border-gray-100 pt-8">
               {[
-                { value: "20+", label: "Years Experience" },
-                { value: "500+", label: "Projects Completed" },
-                { value: "100%", label: "Satisfaction" },
+                { value: "10+", label: "Years Experience" },
+                { value: "100s", label: "Projects Completed" },
+                { value: "Client-first", label: "Every Project" },
               ].map((stat) => (
                 <div key={stat.label}>
                   <p className="text-2xl sm:text-3xl font-bold text-[#153243]">{stat.value}</p>
