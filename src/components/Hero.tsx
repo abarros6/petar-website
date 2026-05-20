@@ -1,28 +1,35 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 import { images } from "@/lib/images";
 
 export default function Hero() {
+  const bgRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!bgRef.current) return;
+      bgRef.current.style.transform = `translateY(${window.scrollY * 0.4}px)`;
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <section
-      id="home"
-      className="relative min-h-screen hero-bg"
-      style={{
-        backgroundImage: `url('${images.hero}')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <section id="home" className="relative min-h-screen overflow-hidden">
+      <div
+        ref={bgRef}
+        className="absolute inset-x-0 -top-[20%] bottom-0 bg-cover bg-center will-change-transform"
+        style={{ backgroundImage: `url('${images.hero}')` }}
+      />
       <div className="absolute inset-0 bg-black/55" />
 
-      {/* px-6 gives 24px each side → 288px content on a 320px phone */}
       <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-6 sm:px-8 text-center text-white">
-
-        {/* w-full forces this element to the padding box width so text wraps at word boundaries */}
         <p className="w-full text-[10px] sm:text-xs font-semibold tracking-[0.08em] sm:tracking-[0.2em] uppercase text-[#b39f79] mb-5">
           Serving Southern Ontario for over 20 Years
         </p>
 
-        {/* text-3xl = 30px; longest single word "remodeling" ≈ 165px — safely fits 288px */}
         <h1 className="w-full text-3xl sm:text-5xl lg:text-7xl font-bold leading-tight mb-6 break-words">
           We are remodeling{" "}
           <span className="text-[#b39f79]">experts</span>

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import SectionHeader from "@/components/ui/SectionHeader";
 import FormField from "@/components/ui/FormField";
 
-const emptyForm = { firstName: '', lastName: '', email: '', phone: '', message: '' };
+const emptyForm = { firstName: '', lastName: '', email: '', phone: '', message: '', honeypot: '' };
 
 export default function ContactCTA() {
   const [form, setForm] = useState(emptyForm);
@@ -70,6 +70,17 @@ export default function ContactCTA() {
               </div>
             ) : (
               <form className="space-y-4" onSubmit={handleSubmit}>
+                {/* Honeypot: hidden from real users, filled by bots */}
+                <input
+                  type="text"
+                  name="honeypot"
+                  value={form.honeypot}
+                  onChange={handleChange}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  style={{ display: 'none' }}
+                />
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <FormField label="First Name" name="firstName" placeholder="John" value={form.firstName} onChange={handleChange} required />
                   <FormField label="Last Name" name="lastName" placeholder="Doe" value={form.lastName} onChange={handleChange} required />
