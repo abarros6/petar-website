@@ -8,13 +8,20 @@ function cl(publicId: string, width: number) {
 
 export const images = {
   hero: cl("living-room-1", 1920),
-  about: cl("kitchen-1", 1200),
+  about: cl("bar-1", 1200),
+  aboutCarousel: [
+    { src: cl("bar-1", 1200),          alt: "Custom basement bar renovation" },
+    { src: cl("kitchen-5", 1200),      alt: "Modern kitchen renovation" },
+    { src: cl("bathroom-5", 800),      alt: "Luxury bathroom renovation" },
+    { src: cl("living-room-3", 1200),  alt: "Living room renovation" },
+    { src: cl("hallway-1", 800),       alt: "Hallway renovation" },
+  ],
   gallery: [
     { src: cl("kitchen-5", 1200),    alt: "Modern kitchen renovation",    label: "Kitchen Renovation" },
     { src: cl("bathroom-5", 800),    alt: "Luxury bathroom renovation",   label: "Bathroom Renovation" },
     { src: cl("living-room-5", 800), alt: "Open concept living area",     label: "Living Area" },
-    { src: cl("bedroom-1", 800),     alt: "Master bedroom custom build",  label: "Master Bedroom" },
     { src: cl("bar-5", 800),         alt: "Custom basement bar",          label: "Custom Bar" },
+    { src: cl("hallway-1", 800),     alt: "Hallway renovation",           label: "Other Spaces" },
   ],
 };
 
@@ -37,7 +44,6 @@ export const galleryCategories = [
     id: "bathrooms",
     label: "Bathrooms",
     images: [
-      { src: cl("bathroom-1", 800), alt: "Bathroom renovation" },
       { src: cl("bathroom-2", 800), alt: "Bathroom renovation" },
       { src: cl("bathroom-3", 800), alt: "Bathroom renovation" },
       { src: cl("bathroom-4", 800), alt: "Bathroom renovation" },
@@ -59,17 +65,6 @@ export const galleryCategories = [
     ],
   },
   {
-    id: "bedrooms",
-    label: "Bedrooms",
-    images: [
-      { src: cl("bedroom-1", 1200),    alt: "Master bedroom renovation" },
-      { src: cl("baby-room-1", 800),   alt: "Baby room renovation" },
-      { src: cl("baby-room-2", 800),   alt: "Baby room renovation" },
-      { src: cl("baby-room-3", 800),   alt: "Baby room renovation" },
-      { src: cl("kids-room-1", 800),   alt: "Kids room renovation" },
-    ],
-  },
-  {
     id: "basement-bar",
     label: "Basement & Bar",
     images: [
@@ -83,7 +78,13 @@ export const galleryCategories = [
       { src: cl("fireplace-1", 800),    alt: "Custom fireplace installation" },
       { src: cl("weight-room", 800),    alt: "Home gym renovation" },
       { src: cl("weight-room-1", 800),  alt: "Home gym renovation" },
-      { src: cl("sauna", 800),          alt: "Custom sauna installation" },
+    ],
+  },
+  {
+    id: "laundry-rooms",
+    label: "Laundry Rooms",
+    images: [
+      { src: cl("laundry-room-1", 800), alt: "Laundry room renovation" },
     ],
   },
   {
@@ -94,7 +95,7 @@ export const galleryCategories = [
       { src: cl("hallway-2", 800),      alt: "Hallway renovation" },
       { src: cl("hallway-3", 800),      alt: "Hallway renovation" },
       { src: cl("hallway-4", 800),      alt: "Hallway renovation" },
-      { src: cl("laundry-room-1", 800), alt: "Laundry room renovation" },
+      { src: cl("sauna", 800),          alt: "Custom sauna installation" },
       { src: cl("skylight-1", 800),     alt: "Skylight installation" },
       { src: cl("skylight-2", 800),     alt: "Skylight installation" },
     ],

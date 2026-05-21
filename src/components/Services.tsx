@@ -3,32 +3,28 @@ import SectionHeader from "@/components/ui/SectionHeader";
 
 const services = [
   {
-    number: "/01",
     title: "Kitchen Remodeling",
     description:
       "Transform your kitchen into a functional, beautiful space tailored to your lifestyle. From custom cabinetry to modern countertops, we handle every detail.",
     galleryHref: "/gallery#kitchens",
   },
   {
-    number: "/02",
     title: "Bathroom Remodeling",
     description:
       "Elevate your bathroom with premium fixtures, custom tile work, and thoughtful design that blends aesthetics with practicality.",
     galleryHref: "/gallery#bathrooms",
   },
   {
-    number: "/03",
-    title: "Living & Dining Areas",
+    title: "Basement Finishing",
     description:
-      "Create inviting, open-concept living and dining spaces that reflect your personal style while maximizing comfort and flow.",
-    galleryHref: "/gallery#living-dining",
+      "Turn your unfinished basement into valuable living space — whether a rec room, home office, or in-law suite, we build it right.",
+    galleryHref: "/gallery#basements",
   },
   {
-    number: "/04",
-    title: "Commercial Renovations",
+    title: "Exterior Renovations",
     description:
-      "Deliver polished, professional commercial spaces built to impress clients and support your business operations efficiently.",
-    galleryHref: "/gallery",
+      "Boost your home's curb appeal and durability with expert exterior work including siding, decks, windows, and entryways.",
+    galleryHref: "/gallery#exterior",
   },
 ];
 
@@ -39,9 +35,8 @@ export default function Services() {
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 lg:mb-16 gap-4 lg:gap-6">
           <SectionHeader label="What We Do" heading="Our Services" />
-          <p className="text-[#6b7280] max-w-md lg:text-right text-sm lg:text-base">
-            We offer a full range of renovation and construction services
-            designed to exceed your expectations at every stage.
+          <p className="text-[#6b7280] text-sm lg:text-base max-w-md">
+            From kitchens and bathrooms to basements and exteriors — we handle every renovation with the same attention to detail.
           </p>
         </div>
 
@@ -49,12 +44,9 @@ export default function Services() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gray-200">
           {services.map((service) => (
             <div
-              key={service.number}
-              className="group bg-white p-6 lg:p-8 hover:bg-[#1a6c7a] transition-colors duration-300"
+              key={service.title}
+              className="group flex flex-col bg-white p-6 lg:p-8 hover:bg-[#1a6c7a] transition-colors duration-300"
             >
-              <p className="text-3xl font-bold text-[#b39f79] mb-5 font-mono">
-                {service.number}
-              </p>
               <h3 className="text-base lg:text-lg font-bold text-[#153243] group-hover:text-white mb-3 transition-colors">
                 {service.title}
               </h3>
@@ -63,7 +55,7 @@ export default function Services() {
               </p>
               <Link
                 href={service.galleryHref}
-                className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-[#b39f79]"
+                className="mt-auto inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-[#b39f79]"
               >
                 Explore
                 <svg

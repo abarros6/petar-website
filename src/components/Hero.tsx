@@ -57,7 +57,7 @@ export default function Hero() {
           href="#contact"
           className="bg-accent hover:bg-[#1a6c7a] text-white font-semibold px-10 py-4 text-sm tracking-wider uppercase transition-all duration-300 hover:scale-105 text-center"
         >
-          Get a Free Quote
+          Get in Touch
         </Link>
       </div>
 

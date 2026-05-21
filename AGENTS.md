@@ -8,7 +8,7 @@ Marketing website for **PAVCON**, a residential renovation company based in Cana
 
 Stack: Next.js 16.2.6 · React 19.2.4 · Tailwind CSS 4 · TypeScript · Resend (email) · Cloudinary (images)
 
-Dev server: `npm run dev`
+Dev server: `npm run dev` — **do not run this.** The user runs it themselves. Only start the dev server if the user explicitly asks.
 
 # Structure
 

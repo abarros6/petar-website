@@ -1,14 +1,14 @@
-import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CategoryNav from "./CategoryNav";
+import GalleryGrid from "./GalleryGrid";
 import { galleryCategories } from "@/lib/images";
 
 export const metadata = {
   title: "Gallery | Pavcon Construction",
   description:
-    "Browse Pavcon's full project gallery — kitchens, bathrooms, living spaces, bedrooms, bars, and more.",
+    "Browse Pavcon's full project gallery — kitchens, bathrooms, living spaces, bars, laundry rooms, and more.",
 };
 
 export default function GalleryPage() {
@@ -18,7 +18,7 @@ export default function GalleryPage() {
 
       <main>
         {/* Page header */}
-        <div className="bg-[#153243] pt-32 pb-16 lg:pb-20">
+        <div className="bg-[#153243] pt-28 pb-8 lg:pb-10">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <Link
               href="/#services"
@@ -35,10 +35,6 @@ export default function GalleryPage() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
               Project Gallery
             </h1>
-            <p className="mt-5 text-white/50 text-sm lg:text-base max-w-xl">
-              {galleryCategories.reduce((sum, c) => sum + c.images.length, 0)} projects across{" "}
-              {galleryCategories.length} categories — browse our full portfolio below.
-            </p>
           </div>
         </div>
 
@@ -58,20 +54,7 @@ export default function GalleryPage() {
                 </span>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3">
-                {category.images.map((img, i) => (
-                  <div key={i} className="relative aspect-[4/3] overflow-hidden group">
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                    />
-                    <div className="absolute inset-0 bg-[#153243]/0 group-hover:bg-[#153243]/25 transition-colors duration-300" />
-                  </div>
-                ))}
-              </div>
+              <GalleryGrid images={category.images} />
             </div>
           </section>
         ))}

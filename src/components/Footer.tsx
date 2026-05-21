@@ -48,12 +48,9 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3 text-sm">
               <li>
-                <a href="tel:4163883989" className="hover:text-[#b39f79] transition-colors">
-                  416 388 3989
-                </a>
+                <span>416 388 3989</span>
               </li>
               <li className="text-white/40">Toronto, Ontario, Canada</li>
-              <li className="text-white/40">Serving Southern Ontario</li>
               <li className="pt-1">
                 <a
                   href="https://www.instagram.com/pavconhomesinc?igsh=c2h4cGh4d210ajFv"
