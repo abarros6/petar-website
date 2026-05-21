@@ -24,9 +24,9 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="text-white text-xs font-semibold tracking-[0.2em] uppercase mb-5">
+            <p className="text-white text-xs font-semibold tracking-[0.2em] uppercase mb-5">
               Navigation
-            </h4>
+            </p>
             <ul className="space-y-3">
               {navLinks.map((link) => (
                 <li key={link.href}>
@@ -43,14 +43,14 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-white text-xs font-semibold tracking-[0.2em] uppercase mb-5">
+            <p className="text-white text-xs font-semibold tracking-[0.2em] uppercase mb-5">
               Contact
-            </h4>
+            </p>
             <ul className="space-y-3 text-sm">
               <li>
                 <span>416 388 3989</span>
               </li>
-              <li className="text-white/40">Toronto, Ontario, Canada</li>
+              <li className="text-white/55">Toronto, Ontario, Canada</li>
               <li className="pt-1">
                 <a
                   href="https://www.instagram.com/pavconhomesinc?igsh=c2h4cGh4d210ajFv"
@@ -68,7 +68,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-white/30">
+        <div className="border-t border-white/10 mt-10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-white/55">
           <p>© {new Date().getFullYear()} Pavcon. All rights reserved.</p>
           <p>Toronto-based Construction &amp; Custom Home Builder</p>
         </div>

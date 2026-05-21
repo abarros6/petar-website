@@ -55,7 +55,7 @@ export default function Services() {
               </p>
               <Link
                 href={service.galleryHref}
-                className="mt-auto inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-[#b39f79]"
+                className="mt-auto inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-[#153243] group-hover:text-white transition-colors"
               >
                 Explore
                 <svg

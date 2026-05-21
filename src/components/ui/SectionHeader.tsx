@@ -13,7 +13,7 @@ export default function SectionHeader({
 }) {
   return (
     <div className={center ? "text-center" : undefined}>
-      <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#b39f79] mb-3">
+      <p className={`text-xs font-semibold tracking-[0.2em] uppercase mb-3 ${light ? "text-[#b39f79]" : "text-[#153243]"}`}>
         {label}
       </p>
       <h2

@@ -101,9 +101,13 @@ export default function About() {
                     key={i}
                     onClick={() => goTo(i)}
                     aria-label={`Go to image ${i + 1}`}
-                    className="w-1.5 h-1.5 rounded-full transition-colors"
-                    style={{ backgroundColor: i === current ? "#b39f79" : "rgba(255,255,255,0.6)" }}
-                  />
+                    className="w-6 h-6 flex items-center justify-center rounded-full transition-colors"
+                  >
+                    <span
+                      className="block w-1.5 h-1.5 rounded-full transition-colors"
+                      style={{ backgroundColor: i === current ? "#b39f79" : "rgba(255,255,255,0.6)" }}
+                    />
+                  </button>
                 ))}
               </div>
             </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { images } from "@/lib/images";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -76,6 +77,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} scroll-smooth`}>
       <head>
+        <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
+        <link rel="preload" as="image" href={images.hero} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
