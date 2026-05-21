@@ -6,9 +6,29 @@ import GalleryGrid from "./GalleryGrid";
 import { galleryCategories } from "@/lib/images";
 
 export const metadata = {
-  title: "Gallery | Pavcon Construction",
+  title: "Gallery",
   description:
     "Browse Pavcon's full project gallery — kitchens, bathrooms, living spaces, bars, laundry rooms, and more.",
+  openGraph: {
+    title: "Project Gallery | Pavcon",
+    description:
+      "Browse Pavcon's full project gallery — kitchens, bathrooms, living spaces, bars, laundry rooms, and more.",
+    url: "https://pavcon.ca/gallery",
+    images: [
+      {
+        url: "https://res.cloudinary.com/dxx7wooza/image/upload/w_1200,q_auto,f_jpg/kitchen-5.jpg",
+        width: 1200,
+        height: 800,
+        alt: "Pavcon kitchen renovation project",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Project Gallery | Pavcon",
+    description: "Browse Pavcon's full project gallery — kitchens, bathrooms, living spaces, bars, laundry rooms, and more.",
+    images: ["https://res.cloudinary.com/dxx7wooza/image/upload/w_1200,q_auto,f_jpg/kitchen-5.jpg"],
+  },
 };
 
 export default function GalleryPage() {
