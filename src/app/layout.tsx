@@ -8,7 +8,6 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const OG_IMAGE = "https://res.cloudinary.com/dxx7wooza/image/upload/w_1200,q_auto,f_jpg/living-room-1.jpg";
 const SITE_URL = "https://pavcon.ca";
 const TITLE = "Pavcon | Toronto Construction & Custom Home Builder";
 const DESCRIPTION =
@@ -28,13 +27,11 @@ export const metadata: Metadata = {
     siteName: "Pavcon",
     title: TITLE,
     description: DESCRIPTION,
-    images: [{ url: OG_IMAGE, width: 1200, height: 800, alt: "Pavcon renovation project — Toronto" }],
   },
   twitter: {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-    images: [OG_IMAGE],
   },
 };
 

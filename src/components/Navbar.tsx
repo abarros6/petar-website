@@ -29,15 +29,18 @@ export default function Navbar() {
         }`}
       >
         <nav className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-20">
-          <Link href="/#home" aria-label="Pavcon Home">
+          <Link href="/#home" aria-label="Pavcon Home" className="flex items-center gap-3">
             <Image
               src={LOGO_SRC}
-              alt="Pavcon Logo"
-              width={140}
-              height={47}
+              alt=""
+              width={40}
+              height={40}
               priority
-              className="h-10 w-auto"
+              className="h-10 w-10"
             />
+            <span className="text-white font-semibold text-xl tracking-widest uppercase">
+              Pavcon
+            </span>
           </Link>
 
           {/* Desktop links */}
@@ -76,14 +79,17 @@ export default function Navbar() {
       >
         {/* Overlay header row */}
         <div className="flex items-center justify-between px-6 h-20 shrink-0">
-          <Link href="/#home" onClick={() => setMenuOpen(false)} aria-label="Pavcon Home">
+          <Link href="/#home" onClick={() => setMenuOpen(false)} aria-label="Pavcon Home" className="flex items-center gap-3">
             <Image
               src={LOGO_SRC}
-              alt="Pavcon Logo"
-              width={140}
-              height={47}
-              className="h-10 w-auto"
+              alt=""
+              width={40}
+              height={40}
+              className="h-10 w-10"
             />
+            <span className="text-white font-semibold text-xl tracking-widest uppercase">
+              Pavcon
+            </span>
           </Link>
           <button
             onClick={() => setMenuOpen(false)}

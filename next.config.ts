@@ -8,11 +8,6 @@ const nextConfig: NextConfig = {
         hostname: "res.cloudinary.com",
         pathname: "/dxx7wooza/**",
       },
-      {
-        protocol: "https",
-        hostname: "pavcon.ca",
-        pathname: "/wp-content/uploads/**",
-      },
     ],
   },
 };
