@@ -48,14 +48,14 @@ export default function ContactCTA() {
               free consultation and quote. Our team is here to help bring your
               vision to life.
             </p>
-            <div className="inline-flex items-center gap-3 text-[#153243] font-semibold">
+            <a href="tel:+14163883989" className="inline-flex items-center gap-3 text-[#153243] font-semibold hover:text-[#1a6c7a] transition-colors">
               <span className="w-10 h-10 bg-[#b39f79] flex items-center justify-center flex-shrink-0">
                 <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
               </span>
               416 388 3989
-            </div>
+            </a>
           </div>
 
           {/* Right: Form */}

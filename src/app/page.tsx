@@ -8,11 +8,11 @@ import ContactCTA from "@/components/ContactCTA";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Pavcon | Toronto Construction & Custom Home Builder",
-  description:
-    "Toronto-based construction and custom home builder. Serving Southern Ontario for over 10 years with renovations, additions, custom builds, and multi-unit conversions.",
+  alternates: {
+    canonical: "https://www.pavcon.ca",
+  },
   openGraph: {
-    url: "https://pavcon.ca",
+    url: "https://www.pavcon.ca",
   },
 };
 

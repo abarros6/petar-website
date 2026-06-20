@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { images } from "@/lib/images";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const SITE_URL = "https://pavcon.ca";
+const SITE_URL = "https://www.pavcon.ca";
 const TITLE = "Pavcon | Toronto Construction & Custom Home Builder";
 const DESCRIPTION =
   "Toronto-based construction and custom home builder. Serving Southern Ontario for over 10 years with renovations, additions, custom builds, and multi-unit conversions.";
@@ -20,6 +19,9 @@ export const metadata: Metadata = {
     template: "%s | Pavcon",
   },
   description: DESCRIPTION,
+  alternates: {
+    canonical: SITE_URL,
+  },
   openGraph: {
     type: "website",
     locale: "en_CA",
@@ -75,7 +77,6 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} scroll-smooth`}>
       <head>
         <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
-        <link rel="preload" as="image" href={images.hero} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -2,28 +2,22 @@ import SectionHeader from "@/components/ui/SectionHeader";
 
 const testimonials = [
   {
-    name: "Edward Jacobs",
-    role: "Homeowner, Toronto",
+    name: "Matthew I.",
+    role: "Google Review",
     quote:
-      "Pavcon completely transformed our kitchen and living room. The team was professional, communicative, and delivered exactly what we envisioned — on time and on budget.",
+      "Pavcon Homes did an excellent job from start to finish. Their team is reliable, friendly, and extremely professional. They truly do everything and they do it well. The quality of workmanship really stands out, and it's clear they take pride in what they deliver. Communication was smooth, timelines were respected, and the end result exceeded expectations. I wouldn't hesitate to recommend Pavcon Homes to anyone looking for high-quality work and a team you can trust.",
   },
   {
-    name: "Madison Ortiz",
-    role: "Property Owner, Mississauga",
+    name: "Roman Kuk",
+    role: "Google Review",
     quote:
-      "We hired Pavcon for a full bathroom renovation and couldn't be happier. Their attention to detail is second to none. We'll definitely use them again for our next project.",
+      "Had a great experience working with Pavcon. Couldn't be happier with the results. Professional, reliable, and detail-oriented from start to finish. The quality of work exceeded expectations and the project was completed on time. Highly recommend to anyone looking for honest and skilled renovation professionals.",
   },
   {
-    name: "Samantha Carter",
-    role: "Homeowner, North York",
+    name: "Angjelo Prifti",
+    role: "Google Review",
     quote:
-      "From the initial consultation to the final walkthrough, the Pavcon team was a pleasure to work with. They turned our outdated basement into a beautiful living space.",
-  },
-  {
-    name: "David Chen",
-    role: "Business Owner, Etobicoke",
-    quote:
-      "Pavcon handled our commercial renovation flawlessly. The space looks incredible and they minimized disruption to our operations throughout. Highly recommended.",
+      "My family has been buying, building, renovating, selling homes for almost 20 years. We've been through a number of different General Contractors and Custom Home builders. Varying degrees of success. Pavcon Homes is a breath of fresh air. The quality is elite, and importantly, they are attentive, fair, detailed. Petar runs a tight ship and we took a punt on this new company, but it paid off for us! We had an AMAZING experience. I've recommended them to a couple of clients as well, and the feedback has been nothing but positive. Highly recommend.",
   },
 ];
 
@@ -45,7 +39,7 @@ export default function Testimonials() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
           {testimonials.map((t) => (
             <div
               key={t.name}
@@ -61,7 +55,14 @@ export default function Testimonials() {
               </p>
               <div className="border-t border-white/10 pt-5">
                 <p className="font-semibold text-white text-sm">{t.name}</p>
-                <p className="text-[#b39f79] text-xs mt-1">{t.role}</p>
+                <a
+                  href="https://www.google.com/search?q=Pavcon+Homes+Reviews"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#b39f79] text-xs mt-1 hover:underline"
+                >
+                  {t.role}
+                </a>
               </div>
             </div>
           ))}

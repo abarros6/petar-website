@@ -9,11 +9,14 @@ export const metadata = {
   title: "Gallery",
   description:
     "Browse Pavcon's full project gallery — kitchens, bathrooms, living spaces, bars, laundry rooms, and more.",
+  alternates: {
+    canonical: "https://www.pavcon.ca/gallery",
+  },
   openGraph: {
     title: "Project Gallery | Pavcon",
     description:
       "Browse Pavcon's full project gallery — kitchens, bathrooms, living spaces, bars, laundry rooms, and more.",
-    url: "https://pavcon.ca/gallery",
+    url: "https://www.pavcon.ca/gallery",
     images: [
       {
         url: "https://res.cloudinary.com/dxx7wooza/image/upload/w_1200,q_auto,f_jpg/kitchen-5.jpg",

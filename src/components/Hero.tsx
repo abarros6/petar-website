@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { images } from "@/lib/images";
 
@@ -32,9 +33,17 @@ export default function Hero() {
     <section id="home" className="relative min-h-screen overflow-hidden">
       <div
         ref={bgRef}
-        className="absolute inset-x-0 top-[-30%] bottom-0 bg-cover bg-center will-change-transform"
-        style={{ backgroundImage: `url('${images.hero}')` }}
-      />
+        className="absolute inset-x-0 top-[-30%] bottom-0 will-change-transform"
+      >
+        <Image
+          src={images.hero}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+      </div>
       <div className="absolute inset-0 bg-black/62" />
 
       <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-6 sm:px-8 text-center text-white">
